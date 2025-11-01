@@ -311,6 +311,9 @@ body.dark-mode .post-list .post-snippet { color: #bbb;}
 .single-pagination { display: flex;justify-content: space-between; margin: 40px auto 0; max-width: 900px; padding: 0 10px;}
 .single-pagination a { background: #007bff;color: #fff; padding: 10px 16px; border-radius: 6px;text-decoration: none;font-size: 14px;transition: background 0.3s ease;}
 .single-pagination a:hover { background: #0056b3;}
+.single-post .post-body .tr-caption-container {margin-left: auto !important;margin-right: auto !important;display: table !important;}
+.single-post .post-body .tr-caption-container td {text-align: center !important;}
+.single-post .post-body .tr-caption-container img {display: inline-block !important; max-width: 100% !important; height: auto !important;margin: 15px auto !important;}
 body.dark-mode .single-pagination a { background: #2f80ed;}
 
 .post-body.entry-content,
@@ -339,10 +342,14 @@ a.button {text-decoration: none !important; border: none;padding: 14px 25px;text
 .post-body img{max-width:100%;height:auto;margin:15px 0;}
 .post-body ul{list-style:none;padding-left:0;margin:15px 0}
 .post-body ul li{margin-bottom:10px;display:flex;align-items:flex-start;margin-left:2px;}
-.post-body ul li::before{content:"\25AA";font-size:1.4em;color:#333;font-weight:bold;display:inline-block;width:0.8em;min-width:0.8em;margin-right:5px;margin-top:-5px}
-.post-body ol{padding-left:20px;margin:15px 0;list-style-type:decimal}
-.post-body ol li{margin-bottom:10px;font-weight:bold;color:#333}
-.post-body ol li p,.post-body ol li span,.post-body ol li div{font-weight:normal;color:inherit}
+.post-body ul li::before{content:"\25AA";font-size:1.4em;color:#8e2de2;font-weight:bold;display:inline-block;width:0.8em;min-width:0.8em;margin-right:5px;margin-top:-5px}
+
+.post-body ol {padding-left: 20px;margin: 15px 0;list-style-type: none;counter-reset: item;}
+.post-body ol li {margin-bottom: 10px; font-weight: bold;color: #333;display: list-item;counter-increment: item;position: relative;padding-left:10px;}
+.post-body ol li:before {content: counter(item) ". ";font-weight: bold;margin-right: 8px;color:#8e2de2;}
+.post-body ol li p,
+.post-body ol li span,
+.post-body ol li div {font-weight: normal;color: inherit;display: inline;}
 .post-body blockquote{margin:20px 0;padding:15px 20px 15px 25px;background-color:#f7f7f7;border-left:3px solid #007bff;font-style:italic;color:#555;line-height:1.6;position:relative}
 .post-body blockquote::before{content:"\201C";position:absolute;top:0px;left:5px;font-size:5em;color:rgba(0,0,0,.1);font-family:serif;line-height:1;z-index:0}
 .post-body blockquote p{margin:0;position:relative;z-index:1}
